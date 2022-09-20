@@ -16,7 +16,7 @@ public class UnitConverter {
 		Double number = something.nextDouble();
 		String Unit = something.next();
 		
-		System.out.println(Unit);
+//		System.out.println(Unit);
 		
 //		Unit = " in";
 		
