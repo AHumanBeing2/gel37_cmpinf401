@@ -32,32 +32,32 @@ public class UnitConverter {
 		
 		else if (Unit.equals("yd")) {
 			number=number*(1/1.09361);
-			Unit = " cm";	
+			Unit = " m";	
 			
 		}
 		else if (Unit.equals("m")) {
 			number=number*1.09361;	
-			Unit = " cm";	
+			Unit = " yd";	
 			
 		}
 		else if (Unit.equals("oz")) {
 			number=number*28.3495;	
-			Unit = " cm";	
+			Unit = " gm";	
 			
 		}
 		else if (Unit.equals("gm")) {
 			number=number*(1/28.3495);	
-			Unit = " cm";
+			Unit = " oz";
 			
 		}
 		else if (Unit.equals("kg")) {
 			number=number*2.20462;
-			Unit = " cm";
+			Unit = " lb";
 			
 		}
 		else if (Unit.equals("lb")) {
 			number=number*(1/2.20462);
-			Unit = " cm";
+			Unit = " kg";
 			
 		}
 		else
