@@ -13,8 +13,6 @@ package gel37_MenuManager;
 public class Menu {
 
 	private String name;
-	private int totalCalories;
-	private String description;
 	private Entree entree;
 	private Salad salad;
 	private Side side;
@@ -47,8 +45,8 @@ public class Menu {
 		this.dessert = dessert;
 	}
 	
-	public int totalCalories() {
-
+	public int getTotalCalories() {
+		
 		int counter = 0;
 		if(entree == null) {
 
@@ -86,7 +84,7 @@ public class Menu {
 		return counter;
 	}
 
-	public String menuDescription() {
+	public String getDescription() {
 		String menuDescript = "menu: ";
 		if(entree == null) {
 			menuDescript += "N/A \n";
@@ -120,23 +118,6 @@ public class Menu {
 			
 		}		
 		return(menuDescript);
-	}
-	
-	public int getTotalCalories() {
-
-		return totalCalories;
-	}
-
-	public void setTotalCalories(int totalCalories) {
-		this.totalCalories = totalCalories;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getName() {
