@@ -23,7 +23,7 @@ public class MenuTest {
 	Menu menu1 = new Menu(menuName1, entree, side, salad, dessert);
 
 	System.out.println(menu1.getName());
-	System.out.println(menu1.getTotalCalories());
+	System.out.println("Calories: " + menu1.getTotalCalories());
 	System.out.println(menu1.getDescription());
 	
 
@@ -35,9 +35,8 @@ public class MenuTest {
 	Menu menu2 = new Menu(menuName2, entree2, side2);
 	
 	System.out.println(menu2.getName());
-	System.out.println(menu2.getTotalCalories());
+	System.out.println("Calories: " + menu2.getTotalCalories());
 	System.out.println(menu2.getDescription());
 
-	//name, cal, desc for calling
 	}
 }

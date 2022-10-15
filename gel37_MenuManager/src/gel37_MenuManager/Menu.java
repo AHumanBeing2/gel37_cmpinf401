@@ -85,7 +85,7 @@ public class Menu {
 	}
 
 	public String getDescription() {
-		String menuDescript = "menu: ";
+		String menuDescript = "Entree: ";
 		if(entree == null) {
 			menuDescript += "N/A \n";
 		}
@@ -93,14 +93,14 @@ public class Menu {
 			menuDescript += entree.getDescription() + "\n";
 		}
 		
-		menuDescript += "side: ";
+		menuDescript += "Side: ";
 		if(side == null) {
 			menuDescript += "N/A \n";
 		}
 		else {
 			menuDescript += side.getDescription() + "\n";
 		}		
-		menuDescript += "salad: ";
+		menuDescript += "Salad: ";
 		
 		if(salad == null) {
 			menuDescript += "N/A \n";
@@ -109,7 +109,7 @@ public class Menu {
 			menuDescript += salad.getDescription() + "\n";
 		}
 		
-		menuDescript += "dessert: ";
+		menuDescript += "Dessert: ";
 		if(dessert == null) {
 			menuDescript += "N/A \n";
 		}
