@@ -85,36 +85,38 @@ public class Menu {
 	}
 
 	public String getDescription() {
-		String menuDescript = "Entree: ";
+		String menuDescript;
+		menuDescript = "Entree: ";
+		
 		if(entree == null) {
 			menuDescript += "N/A \n";
 		}
 		else {
-			menuDescript += entree.getDescription() + "\n";
+			menuDescript += entree.getName() + ", " + entree.getDescription() + "\n";
 		}
 		
-		menuDescript += "Side: ";
+			menuDescript += "Side: ";
 		if(side == null) {
 			menuDescript += "N/A \n";
 		}
 		else {
-			menuDescript += side.getDescription() + "\n";
+			menuDescript += side.getName() + ", " + side.getDescription() + "\n";
 		}		
-		menuDescript += "Salad: ";
-		
+
+			menuDescript += "Salad: ";		
 		if(salad == null) {
 			menuDescript += "N/A \n";
 		}
 		else {
-			menuDescript += salad.getDescription() + "\n";
+			menuDescript += salad.getName() + ", " + salad.getDescription() + "\n";
 		}
 		
-		menuDescript += "Dessert: ";
+			menuDescript += "Dessert: ";
 		if(dessert == null) {
 			menuDescript += "N/A \n";
 		}
 		else {
-			menuDescript += dessert.getDescription() + "\n";
+			menuDescript += dessert.getName() + ", " + dessert.getDescription() + "\n";
 			
 		}		
 		return(menuDescript);
