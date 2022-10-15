@@ -48,12 +48,15 @@ public class Menu {
 	}
 	
 	public int totalCalories() {
+
 		int counter = 0;
 		if(entree == null) {
+
 			counter += 0;
 		}
 		else {
 			counter += entree.getCalories();
+
 		}
 		
 		counter += 0;
@@ -120,6 +123,7 @@ public class Menu {
 	}
 	
 	public int getTotalCalories() {
+
 		return totalCalories;
 	}
 
