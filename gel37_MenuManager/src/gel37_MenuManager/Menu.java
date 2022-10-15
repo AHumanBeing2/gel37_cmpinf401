@@ -18,13 +18,10 @@ public class Menu {
 	private Side side;
 	private Dessert dessert;
 	
+//Overloaded Constructor
 	
 	public Menu(String name) {
 		this.name = name;
-		entree = null;
-		side = null;
-		salad = null;
-		dessert = null;
 
 	}
 	
@@ -32,8 +29,6 @@ public class Menu {
 		this.name = name;
 		this.entree = entree;
 		this.side = side;
-		salad = null;
-		dessert = null;
 
 	}
 	
@@ -44,6 +39,11 @@ public class Menu {
 		this.salad = salad;
 		this.dessert = dessert;
 	}
+	
+	/**
+	 * Counter is the net amount of calories, starts at 0 and doesn't increase if the dish does not exist.
+	 * If the dish does exist, then the calories for the respective dish is added to counter.
+	 */
 	
 	public int getTotalCalories() {
 		
@@ -84,10 +84,17 @@ public class Menu {
 		return counter;
 	}
 
+	/**
+	 * Prints out line for dish category, then tests for whether or not there is an dish.
+	 * If there is, then the name and description get printed out.
+	 * If not, then N/A is printed out in its place.
+	 */
+	
+	
 	public String getDescription() {
 		String menuDescript;
-		menuDescript = "Entree: ";
-		
+
+			menuDescript = "Entree: ";
 		if(entree == null) {
 			menuDescript += "N/A \n";
 		}
@@ -119,7 +126,9 @@ public class Menu {
 			menuDescript += dessert.getName() + ", " + dessert.getDescription() + "\n";
 			
 		}		
+
 		return(menuDescript);
+
 	}
 
 	public String getName() {

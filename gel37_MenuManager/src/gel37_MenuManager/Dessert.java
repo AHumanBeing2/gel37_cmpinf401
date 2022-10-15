@@ -10,6 +10,12 @@ package gel37_MenuManager;
 
 */
 
+/**
+ * 
+ * Entree has three properties, its name, its calorie count, and its description.
+ *
+ */
+
 public class Dessert {
 	private String name;
 	private String description;

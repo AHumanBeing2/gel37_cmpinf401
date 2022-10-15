@@ -10,6 +10,12 @@ package gel37_MenuManager;
 
 */
 
+/**
+ * 
+ * Salad has three properties, its name, its calorie count, and its description.
+ *
+ */
+
 public class Salad {
 	private String name;
 	private String description;

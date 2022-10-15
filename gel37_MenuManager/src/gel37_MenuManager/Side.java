@@ -10,6 +10,12 @@ package gel37_MenuManager;
 
 */
 
+/**
+ * 
+ * Side has three properties, its name, its calorie count, and its description.
+ *
+ */
+
 public class Side {
 	private String name;
 	private String description;
