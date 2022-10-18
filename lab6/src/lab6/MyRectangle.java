@@ -22,6 +22,8 @@ public class MyRectangle {
 	public MyRectangle(int width, int height, int startX, int startY) {
 		this.width = width;
 		this.height = height;
+		this.startX = startX;
+		this.startY = startY;
 	}
 
 //return the area of the given MyRectangle	
