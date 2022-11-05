@@ -3,7 +3,22 @@ package gel37_MenuManager;
 import java.util.ArrayList;
 import java.io.*;
 
+/**
+ * 
+ * @author George Li
+ * @CREATED: 11/04/2022
+ *
+ *
+ */
+
 public class FileManager {
+	
+	/**
+	 * Method readEntrees
+	 * @param fileName
+	 * @return A Separated ArrayList containing Entree details
+	 */
+
 	public static ArrayList<Entree> readEntrees(String fileName) {	
 		ArrayList<Entree> entreeArrayList = new ArrayList<>();
 		try {
@@ -31,6 +46,12 @@ public class FileManager {
 		return entreeArrayList;		
 	}
 	
+	
+	/**
+	 * Method readSides
+	 * @param fileName
+	 * @return A separated ArrayList containing Side details
+	 */
 	public static ArrayList<Side> readSides(String fileName) {
 		ArrayList<Side> sideArrayList = new ArrayList<>();
 		try {
@@ -57,6 +78,12 @@ public class FileManager {
 		}
 		return sideArrayList;
 	}
+		
+	/**
+	 * Method readSalads
+	 * @param fileName
+	 * @return A separated ArrayList containing salad details
+	 */
 	
 	public static ArrayList<Salad> readSalads(String fileName) {
 		ArrayList<Salad> saladArrayList = new ArrayList<>();
@@ -82,6 +109,12 @@ public class FileManager {
 		}
 		return saladArrayList;
 	}
+	
+	/**
+	 * Method readDesserts
+	 * @param fileName
+	 * @return A separated ArrayList containing desserts details
+	 */
 	
 	public static ArrayList<Dessert> readDesserts(String fileName) {
 		ArrayList<Dessert> dessertArrayList = new ArrayList<>();

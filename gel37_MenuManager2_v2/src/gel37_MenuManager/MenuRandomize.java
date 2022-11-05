@@ -3,13 +3,26 @@ package gel37_MenuManager;
 import java.util.ArrayList;
 import java.util.*;
 
+/**
+ * 
+ * @author George Li
+ * @created: 11/4/2022
+ *
+ */
+
+
+
 public class MenuRandomize {
 	private ArrayList<Entree> entrees = new ArrayList<>();
 	private ArrayList<Salad> salads = new ArrayList<>();
 	private ArrayList<Side> sides = new ArrayList<>();
 	private ArrayList<Dessert> desserts = new ArrayList<>();
 	
-
+	/**
+	 * Method MenuRandomize
+	 * @param
+	 * @return sets dish objects to equal file inputs via FileManager class
+	 */
 	
 	public MenuRandomize(String entreeFile, String sideFile, String SaladeFile, String DessertFile) {
 		entrees = FileManager.readEntrees(entreeFile);
@@ -18,6 +31,12 @@ public class MenuRandomize {
 		desserts = FileManager.readDesserts(entreeFile);
 		
 	}
+	
+	/**
+	 * Method randomMenu
+	 * @param
+	 * @return menu containing a name, and a random entree, side, salad, and dessert
+	 */
 	
 	public Menu randomMenu() {
 		String menuName = "menu1";
