@@ -1,5 +1,9 @@
 package lab8;
 
+import java.io.*;
+
+
+
 public class RecordList {
 		/**
 		 * The node class represents a single list element with a data item and
@@ -11,6 +15,10 @@ public class RecordList {
 			// reference to the next node in the list, or null if there is no such node
 			// (i.e. this is the last node in the list)
 			Node next;
+			
+			  public void setNext(Node next){
+				    this.next = next;
+				  }
 			
 			/**
 			 * Creates a node with the given data
@@ -59,8 +67,19 @@ public class RecordList {
 		 * @return the index the data was inserted at
 		 */
 		public int add(Record data) {
+			Node tempNode = new Node(data);
+			Node currentNode = head;
+			int index = 0;
+
+			while (currentNode.next != null && !(currentNode.next.data.getTime()>=data.getTime())) {
+				currentNode = currentNode.next;
+				index++;
+			}
+			
+			currentNode.setNext(tempNode);
+			
 			// Replace this with your own code. You can use the indexOf() method as a guide.
-			return 0;
+			return index;
 			
 			// traverse to place to insert node (i.e. get currentNode to be the one
 			// immediately before where we want to insert -- the last node with a strictly
@@ -68,8 +87,7 @@ public class RecordList {
 
 			
 			// add new node in the spot we've found
-			
-		}
+			}
 		
 		/**
 		 * Prints out each record in the list, one per line
@@ -82,7 +100,7 @@ public class RecordList {
 				System.out.println(currentNode.data.getName() + ", " + currentNode.data.getTime());
 				currentNode = currentNode.next;
 			}
-			System.out.println();
+
 		}
 		
 		/**
@@ -90,7 +108,23 @@ public class RecordList {
 		 * @param filename name of the file to write the list to
 		 */
 		public void writeToFile(String filename) {
+			Node currentNode = head.next;
+			try {
+	            FileWriter fw = new FileWriter(filename);
+	            BufferedWriter bw = new BufferedWriter(fw);
+	            
+				while (currentNode != null) {
+	                bw.write(currentNode.data.getName() + " " + currentNode.data.getTime());
+	                bw.newLine();
+					currentNode = currentNode.next;
+	            }
+	            bw.close();
+	            fw.close();
+	        } catch (IOException e) {
+	            System.out.println(e.getMessage());
+			
 			// Add your own code here to write out the list contents to a file. You can use
 			// our file writing examples and the print() method above as a guide.
+			}
 		}
 }
