@@ -33,7 +33,7 @@ public class Lab8 {
 				}
 				
 				// You can uncomment this to print the list after each operation for debugging
-				//list.print();
+				list.print();
 			}
 		} while (input != null);
 		

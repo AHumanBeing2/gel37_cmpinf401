@@ -28,6 +28,10 @@ public class RecordList {
 				next = null;
 				data = dataValue;
 			}
+
+			public Node getNext() {
+				return this.next;
+			}
 			
 		}
 		
@@ -75,7 +79,7 @@ public class RecordList {
 				currentNode = currentNode.next;
 				index++;
 			}
-			
+			tempNode.setNext(currentNode.getNext());
 			currentNode.setNext(tempNode);
 			
 			// Replace this with your own code. You can use the indexOf() method as a guide.
