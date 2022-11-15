@@ -8,30 +8,32 @@ public class Circle {
 		
 	}
 	public Circle(double radius) {
-		
+		this.radius = radius;
 	}
 	
 	public Circle(double radius, String color) {
-		
+		this.radius = radius;
+		this.color = color;
 	}
 	
 	public double getRadius() {
-		return 0;
+		return radius;
 	}
 	
 	public void setRadius(double radius) {
-
+		this.radius = radius;
 	}
 	
 	public String getColor() {
-		return null;
+		return color;
 	}
 	
 	public void setColor(String color) {
-
+		this.color = color;
 	}
 	
 	public double getArea() {
-		return 0;
+		double area = radius*radius*Math.PI;
+		return area;
 	}
 }

@@ -5,23 +5,23 @@ public class Staff extends Person{
 	double pay;
 	
 	public Staff(String name, String address, double pay) {
-		
+		super();
 	}
 	
 	public String getSchool() {
-		return null;
+		return school;
 	}
 	
 	public void setSchool(String school) {
-		
+		this.school = school;
 	}
 	
 	public double getPay() {
-		return 0;
+		return pay;
 	}
 	
 	public void setPay(double pay) {
-		
+		this.pay = pay;
 	}
 	
 	public String toString() {

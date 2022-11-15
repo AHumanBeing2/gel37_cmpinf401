@@ -5,18 +5,18 @@ public abstract class Person {
 	String address = "String";
 	
 	public String getName() {
-		return null;
+		return name;
 	}
 	
 	public String getAddress() {
-		return null;
+		return address;
 	}
 	
 	public void setAddress(String address) {
-		
+		this.address = address;
 	}
 	
 	public void setName(String name) {
-		
+		this.name = name;
 	}
 }

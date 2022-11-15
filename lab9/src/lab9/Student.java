@@ -6,15 +6,15 @@ public class Student extends Person{
 	double fee;
 	
 	public Student(String name, String address, String program, int year, double fee) {
-		
+		super();
 	}
 	
 	public String getProgram() {
-		return null;
+		return program;
 	}
 	
 	public void setProgram(String program) {
-		
+		this.program = program;
 	}
 	
 	public int getYear(){
@@ -22,7 +22,7 @@ public class Student extends Person{
 	}
 	
 	public void setYear(int year) {
-		
+		this.year = year;
 	}
 	
 	public double getFee() {
@@ -30,7 +30,7 @@ public class Student extends Person{
 	}
 	
 	public void setFee(double fee) {
-		
+		this.fee = fee;
 	}
 	
 	public String toString() {
