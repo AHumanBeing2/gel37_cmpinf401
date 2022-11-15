@@ -2,8 +2,6 @@ package lab8;
 
 import java.io.*;
 
-
-
 public class RecordList {
 		/**
 		 * The node class represents a single list element with a data item and
