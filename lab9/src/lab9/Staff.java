@@ -1,8 +1,8 @@
 package lab9;
 
 public class Staff extends Person{
-	String school;
-	double pay;
+	private String school;
+	private double pay;
 	
 	public Staff(String name, String address, double pay) {
 		super();

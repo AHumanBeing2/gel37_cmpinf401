@@ -1,15 +1,15 @@
 package lab9;
 
 public abstract class Person {
-	String name;
-	String address = "String";
+	private String name;
+	private String address = "String";
 	
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	
 	public String getAddress() {
-		return address;
+		return this.address;
 	}
 	
 	public void setAddress(String address) {

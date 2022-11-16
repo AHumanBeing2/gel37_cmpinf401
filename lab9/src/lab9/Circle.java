@@ -1,8 +1,8 @@
 package lab9;
 
 public class Circle {
-	double radius = 5.0;
-	String color = "Green";
+	private double radius = 5.0;
+	private String color = "Green";
 	
 	public Circle() {
 		

@@ -2,7 +2,7 @@ package lab9;
 
 public class Cylinder extends Circle{
 	
-	double height = 1.0;
+	private double height = 1.0;
 	
 	public Cylinder() {
 		super();
@@ -23,8 +23,8 @@ public class Cylinder extends Circle{
 	}
 	
 	public double getVolume() {
-		double x = Math.PI*radius*radius*height;
-		return x;
+		double volume = Circle.getArea()*height;
+		return volume;
 	}
 	
 }
