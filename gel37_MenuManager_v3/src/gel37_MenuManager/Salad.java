@@ -17,14 +17,8 @@ package gel37_MenuManager;
  */
 
 public class Salad extends MenuItem{
-	public Salad() {
-		super();
-	}
-	
-	public Salad(String name, String desc, int cal) {
-		this.name = name;
-		this.calories = cal;
-		this.description = desc;
+	public Salad(String name, String desc, int cal, double price) {
+		super(name, desc, cal, price);
 	}
 
 }

@@ -143,10 +143,34 @@ public class FileManager {
 	}
 
 	public static ArrayList<MenuItem> readItems(String fileName){
-		return null;
+		ArrayList<MenuItem> MenuItemArrayList = new ArrayList<>();
+		try {
+		    FileReader fr = new FileReader("data/dishes.txt"); 
+		    BufferedReader br = new BufferedReader(fr); 
+		    String line = br.readLine();
+//		    System.out.println(line);
+		    while (line != null) {
+		    	String [] menuItemParts = line.split("@@");
+		    	String name, description;
+		    	int calories;
+		    	double price;
+		    	name = menuItemParts[0] ;
+		    	description = menuItemParts[1];
+		    	calories = Integer.valueOf(menuItemParts[2]);
+		    	price = Double.valueOf(menuItemParts[3]);
+		    	MenuItem menuItem = new MenuItem(name, description, calories, price);
+		    	MenuItemArrayList.add(menuItem);
+		    	line = br.readLine();
+		    }
+		    br.close();
+		    fr.close();
+		} catch (IOException e) {
+		    System.out.println(e.getMessage());
+		}
+		return MenuItemArrayList;
 	}
 	
 	public static void writeMenus (ArrayList<Menu> menu, String fileName){
-
+		
 	}
 }

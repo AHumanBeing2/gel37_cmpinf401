@@ -45,6 +45,11 @@ public class Menu {
 	 * If the dish does exist, then the calories for the respective dish is added to counter.
 	 */
 	
+	@Override
+	public String toString() {
+		return name;
+	}
+	
 	public int totalCalories() {
 		
 		int counter = 0;

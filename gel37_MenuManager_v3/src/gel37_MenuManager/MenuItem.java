@@ -6,9 +6,18 @@ public class MenuItem {
 	private int calories;
 	private double price;
 	
+
 	public MenuItem(String name, String desc, int cal, double price) {
-		
+		this.name = name;
+		this.calories = cal;
+		this.description = desc;
+		this.price = price;
 		return;
+	}
+	
+	@Override
+	public String toString() {
+		return name;
 	}
 	
 	public String getName() {

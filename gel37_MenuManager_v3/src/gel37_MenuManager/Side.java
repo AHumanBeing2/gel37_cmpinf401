@@ -17,14 +17,8 @@ package gel37_MenuManager;
  */
 
 public class Side extends MenuItem{
-	public Side() {
-		super();
-	}
-	
-	public Side(String name, String desc, int cal) {
-		this.name = name;
-		this.calories = cal;
-		this.description = desc;
+	public Side(String name, String desc, int cal, double price) {
+		super(name, desc, cal, price);
 	}
 
 }
