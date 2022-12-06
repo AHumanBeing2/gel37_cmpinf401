@@ -18,7 +18,7 @@ public class FileManager {
 	 * @param fileName
 	 * @return A Separated ArrayList containing Entree details
 	 */
-
+	/*
 	public static ArrayList<Entree> readEntrees(String fileName) {	
 		ArrayList<Entree> entreeArrayList = new ArrayList<>();
 		try {
@@ -52,6 +52,7 @@ public class FileManager {
 	 * @param fileName
 	 * @return A separated ArrayList containing Side details
 	 */
+	/*
 	public static ArrayList<Side> readSides(String fileName) {
 		ArrayList<Side> sideArrayList = new ArrayList<>();
 		try {
@@ -78,13 +79,14 @@ public class FileManager {
 		}
 		return sideArrayList;
 	}
-		
+	*/	
+	
 	/**
 	 * Method readSalads
 	 * @param fileName
 	 * @return A separated ArrayList containing salad details
 	 */
-	
+	/*
 	public static ArrayList<Salad> readSalads(String fileName) {
 		ArrayList<Salad> saladArrayList = new ArrayList<>();
 		try {
@@ -109,13 +111,13 @@ public class FileManager {
 		}
 		return saladArrayList;
 	}
-	
+	*/
 	/**
 	 * Method readDesserts
 	 * @param fileName
 	 * @return A separated ArrayList containing desserts details
 	 */
-	
+	/*
 	public static ArrayList<Dessert> readDesserts(String fileName) {
 		ArrayList<Dessert> dessertArrayList = new ArrayList<>();
 		try {
@@ -141,11 +143,11 @@ public class FileManager {
 		}
 		return dessertArrayList;
 	}
-
+	*/
 	public static ArrayList<MenuItem> readItems(String fileName){
 		ArrayList<MenuItem> MenuItemArrayList = new ArrayList<>();
 		try {
-		    FileReader fr = new FileReader("data/dishes.txt"); 
+		    FileReader fr = new FileReader(fileName); 
 		    BufferedReader br = new BufferedReader(fr); 
 		    String line = br.readLine();
 //		    System.out.println(line);
@@ -170,7 +172,19 @@ public class FileManager {
 		return MenuItemArrayList;
 	}
 	
-	public static void writeMenus (ArrayList<Menu> menu, String fileName){
+	public static void writeMenu( String fileName, ArrayList<Menu> menus){
+		try{
+			FileWriter fw = new FileWriter("Menus");
+			BufferedWriter bw = new BufferedWriter(fw);
+		    for (int i=0; i != menus.size()-1; i++) {
+		    	bw.write(menus.get(i).toString());
+		    }
+		    	bw.close();
+		    	fw.close();
+		    }
+		catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 }
