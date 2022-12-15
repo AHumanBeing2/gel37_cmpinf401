@@ -3,21 +3,43 @@ package gel37_MenuManager;
 import java.util.ArrayList;
 
 public class MenuManager {
-	private ArrayList<Entree> entrees;
-	private ArrayList<Side> sides;
-	private ArrayList<Salad> salads;
-	private ArrayList<Dessert> desserts;
+	private ArrayList<Entree> entrees = new ArrayList<Entree>();
+	private ArrayList<Side> sides = new ArrayList<Side>();
+	private ArrayList<Salad> salads = new ArrayList<Salad>();
+	private ArrayList<Dessert> desserts = new ArrayList<Dessert>();
 	
 	public MenuManager(String dishesFile) {
-		FileManager.readItems("dishes.txt");
-		while(!=null) {
-			entrees.add();
+		ArrayList<MenuItem> asdf = new ArrayList<MenuItem>();
+		asdf =	FileManager.readItems(dishesFile);
+		for(int i = 0; i < asdf.size(); i++){
+			//System.out.println("hi");
+			if(asdf.get(i) instanceof Entree) {
+				entrees.add((Entree)asdf.get(i));
+			}
+			else if (asdf.get(i) instanceof Side) {
+				sides.add((Side) asdf.get(i));
+			}
+			else if (asdf.get(i) instanceof Salad) {
+				salads.add((Salad) asdf.get(i));
+			}
+			else if (asdf.get(i) instanceof Dessert) {
+				desserts.add((Dessert) asdf.get(i));
+			}
 		}
+	
 	}
 	
-	public Menu randomMenu(String name){
-		return null;
+	public static void idk() {
 		
+	}
+	
+	public Menu randomMenu(String name) {
+		int entreeIndex = (int) (Math.random()*entrees.size());
+		int sideIndex = (int)(Math.random()*sides.size());
+		int saladIndex = (int) (Math.random()*salads.size());
+		int dessertIndex = (int) (Math.random()*desserts.size());
+		
+		return new Menu(name, entrees.get(entreeIndex), sides.get(sideIndex), salads.get(saladIndex), desserts.get(dessertIndex));
 	}
 	
 	public Menu minCaloriesMenu(String name) {

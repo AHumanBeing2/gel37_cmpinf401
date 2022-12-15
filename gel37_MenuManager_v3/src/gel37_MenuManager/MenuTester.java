@@ -6,7 +6,7 @@ package gel37_MenuManager;
  * @created: 11/4/2022
  *
  */
-
+/*
 public class MenuTester{
 	public static void main(String[] args){
 		MenuRandomize randomize = new MenuRandomize("data/entrees.txt", "data/sides.txt", "data/salads.txt", "data/desserts.txt");
@@ -15,3 +15,4 @@ public class MenuTester{
 	}
 }
 
+*/

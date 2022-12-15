@@ -9,10 +9,9 @@ public class MenuItem {
 
 	public MenuItem(String name, String desc, int cal, double price) {
 		this.name = name;
-		this.calories = cal;
 		this.description = desc;
+		this.calories = cal;
 		this.price = price;
-		return;
 	}
 	
 	@Override

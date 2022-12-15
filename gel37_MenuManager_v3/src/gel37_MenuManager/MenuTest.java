@@ -1,3 +1,4 @@
+
 package gel37_MenuManager;
 
 /**
@@ -11,7 +12,7 @@ package gel37_MenuManager;
 */
 
 
-
+/*
 public class MenuTest {
 	public static void main(String[] args) {
 
@@ -45,3 +46,4 @@ public class MenuTest {
 
 	}
 }
+*/

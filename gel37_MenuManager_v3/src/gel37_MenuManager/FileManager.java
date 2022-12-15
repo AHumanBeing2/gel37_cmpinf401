@@ -153,15 +153,33 @@ public class FileManager {
 //		    System.out.println(line);
 		    while (line != null) {
 		    	String [] menuItemParts = line.split("@@");
-		    	String name, description;
+		    	String name, description, dishType;
 		    	int calories;
 		    	double price;
-		    	name = menuItemParts[0] ;
-		    	description = menuItemParts[1];
-		    	calories = Integer.valueOf(menuItemParts[2]);
-		    	price = Double.valueOf(menuItemParts[3]);
-		    	MenuItem menuItem = new MenuItem(name, description, calories, price);
-		    	MenuItemArrayList.add(menuItem);
+		    	name = menuItemParts[0];
+		    	dishType = menuItemParts[1];
+		    	description = menuItemParts[2];
+		    	calories = Integer.valueOf(menuItemParts[3]);
+		    	price = Double.valueOf(menuItemParts[4]);
+		    	
+		    	if(dishType.equals("entree")) {
+			    	Entree entree = new Entree(name, description, calories, price);
+			    	//System.out.println(":) yay");
+			    	MenuItemArrayList.add(entree);
+		    	}
+		    	else if(dishType.equals("side")) {
+		    		Side side = new Side(name, description, calories, price);
+			    	MenuItemArrayList.add(side);
+		    	}
+		    	else if(dishType.equals("salad")) {
+		    		Salad salad = new Salad(name, description, calories, price);
+			    	MenuItemArrayList.add(salad);
+		    	}
+		    	else if(dishType.equals("dessert")) {
+			    	Dessert dessert = new Dessert(name, description, calories, price);
+			    	MenuItemArrayList.add(dessert);
+		    	}
+		    	
 		    	line = br.readLine();
 		    }
 		    br.close();
@@ -172,12 +190,14 @@ public class FileManager {
 		return MenuItemArrayList;
 	}
 	
-	public static void writeMenu( String fileName, ArrayList<Menu> menus){
+	public static void writeMenu(String fileName, ArrayList<Menu> menus){
 		try{
-			FileWriter fw = new FileWriter("Menus");
+			File file = new File(fileName);
+			FileWriter fw = new FileWriter(fileName);
 			BufferedWriter bw = new BufferedWriter(fw);
-		    for (int i=0; i != menus.size()-1; i++) {
-		    	bw.write(menus.get(i).toString());
+		    for (int i=0; i != menus.size(); i++) {
+		    	bw.write(menus.get(i).description());
+		    	//bw.write(menus.get(i).());
 		    }
 		    	bw.close();
 		    	fw.close();

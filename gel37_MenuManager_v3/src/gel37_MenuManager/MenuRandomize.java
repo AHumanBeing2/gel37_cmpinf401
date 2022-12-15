@@ -23,7 +23,7 @@ public class MenuRandomize {
 	 * @param
 	 * @return sets dish objects to equal file inputs via FileManager class
 	 */
-	
+	/*
 	public MenuRandomize(String entreeFile, String sideFile, String SaladeFile, String DessertFile) {
 		entrees = FileManager.readEntrees(entreeFile);
 		sides = FileManager.readSides(entreeFile);
@@ -31,7 +31,7 @@ public class MenuRandomize {
 		desserts = FileManager.readDesserts(entreeFile);
 		
 	}
-	
+	*/
 	/**
 	 * Method randomMenu
 	 * @param
