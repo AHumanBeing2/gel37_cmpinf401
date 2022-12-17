@@ -47,19 +47,24 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 
 		createMenuLabel = new JLabel("Create your own menu:");
 		createMenuLabel.setBounds(10, 5, 135, 25);
+
 		finMenuLabel = new JLabel("Created menus:");
 		finMenuLabel.setBounds(350, 10, 100, 25);
+
 		genMenuLabel = new JLabel("Or generate a menu:");
 		genMenuLabel.setBounds(10, 250, 120, 25);
 
+		
+		
 		entreesLabel = new JLabel("Entrees:");
 		entreesLabel.setBounds(15, 30, 70, 25);
 
-		saladsLabel = new JLabel("Salads:");
-		saladsLabel.setBounds(15, 65, 70, 25);
-
 		sidesLabel = new JLabel("Sides:");
-		sidesLabel.setBounds(15, 100, 70, 25);
+		sidesLabel.setBounds(15, 65, 70, 25);
+		
+		saladsLabel = new JLabel("Salads:");
+		saladsLabel.setBounds(15, 100, 70, 25);
+
 
 		dessertsLabel = new JLabel("Desserts:");
 		dessertsLabel.setBounds(15, 135, 70, 25);
@@ -143,7 +148,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 			}
 		});
 
-		//delete button, removes all items from list box and arraylist of menus
+		//delete button function, which deletes all items
 		
 		deleteButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -152,7 +157,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 			}
 		});
 
-		//save button, writes all menus to menus.txt and displays message
+		//save button function, which writes to menus.txt and displays message " Menus saved to menus.txt" afterwards
 		
 		saveButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -232,17 +237,17 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		frameDetails.setAlwaysOnTop(true);
 		//Insets margins = new Insets(1,3,1,1);
 
-		JLabel entreesLabel1 = new JLabel("Entree:");
-		entreesLabel1.setBounds(15, 30, 70, 25);
+		JLabel entreesLabel = new JLabel("Entree:");
+		entreesLabel.setBounds(15, 30, 70, 25);
 
-		JLabel sidesLabel1 = new JLabel("Side:");
-		sidesLabel1.setBounds(15, 170, 70, 25);
+		JLabel sidesLabel = new JLabel("Side:");
+		sidesLabel.setBounds(15, 170, 70, 25);
 		
-		JLabel saladsLabel1 = new JLabel("Salad:");
-		saladsLabel1.setBounds(15, 100, 70, 25);
+		JLabel saladsLabel = new JLabel("Salad:");
+		saladsLabel.setBounds(15, 100, 70, 25);
 
-		JLabel dessertsLabel1 = new JLabel("Dessert:");
-		dessertsLabel1.setBounds(15, 240, 70, 25);
+		JLabel dessertsLabel = new JLabel("Dessert:");
+		dessertsLabel.setBounds(15, 240, 70, 25);
 
 		JLabel caloriesLabel = new JLabel("Total Calories (Kc):");
 		caloriesLabel.setBounds(15, 320, 90, 35);
@@ -274,10 +279,10 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		textArea6.setBounds(110,410,60,20);
 		textArea6.setBorder(BorderFactory.createLineBorder(Color.CYAN));
 
-		frameDetails.add(entreesLabel1);
-		frameDetails.add(sidesLabel1);
-		frameDetails.add(saladsLabel1);
-		frameDetails.add(dessertsLabel1);
+		frameDetails.add(entreesLabel);
+		frameDetails.add(sidesLabel);
+		frameDetails.add(saladsLabel);
+		frameDetails.add(dessertsLabel);
 		frameDetails.add(caloriesLabel);
 		frameDetails.add(priceLabel);
 		frameDetails.add(textArea1);
