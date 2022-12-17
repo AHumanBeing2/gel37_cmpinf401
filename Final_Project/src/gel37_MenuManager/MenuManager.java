@@ -8,6 +8,11 @@ public class MenuManager {
 	private ArrayList<Salad> salads = new ArrayList<Salad>();
 	private ArrayList<Dessert> desserts = new ArrayList<Dessert>();
 	
+	/**
+	 * tests incoming arraylist elements to see what kind of dish it is, moves thoses dishes into their respective ArrayList.
+	 * ie, Entrees to the entrees arraylist
+	 */
+	
 	public MenuManager(String dishesFile) {
 		ArrayList<MenuItem> asdf = new ArrayList<MenuItem>();
 		asdf =	FileManager.readItems(dishesFile);
@@ -42,62 +47,70 @@ public class MenuManager {
 		return new Menu(name, entrees.get(entreeIndex), sides.get(sideIndex), salads.get(saladIndex), desserts.get(dessertIndex));
 	}
 	
+	/**
+	 * compares each dish type element with each other, if the calorie value is lower that dish is kept
+	 */
+	
 	public Menu minCaloriesMenu(String name) {
 		Menu minMenu = new Menu(name);
 		
 		minMenu.setEntree(entrees.get(entrees.size()-1));
-		for (Entree item: entrees){
-			if (minMenu.getEntree().getCalories() > item.getCalories()) 
-				minMenu.setEntree(item);		
-		}
-
-		minMenu.setSalad(salads.get(salads.size()-1));
-		for (Salad item: salads){
-			if (minMenu.getSalad().getCalories() > item.getCalories()) 
-				minMenu.setSalad(item);		
+		for (Entree entree: entrees){
+			if (minMenu.getEntree().getCalories() > entree.getCalories()) 
+				minMenu.setEntree(entree);		
 		}
 		
 		minMenu.setSide(sides.get(sides.size()-1));
-		for (Side item: sides){
-			if (minMenu.getSide().getCalories() > item.getCalories()) 
-				minMenu.setSide(item);		
+		for (Side side: sides){
+			if (minMenu.getSide().getCalories() > side.getCalories()) 
+				minMenu.setSide(side);		
+		}
+		
+		minMenu.setSalad(salads.get(salads.size()-1));
+		for (Salad salad: salads){
+			if (minMenu.getSalad().getCalories() > salad.getCalories()) 
+				minMenu.setSalad(salad);		
 		}
 		
 		minMenu.setDessert(desserts.get(desserts.size()-1));
-		for (Dessert item: desserts){
-			if (minMenu.getDessert().getCalories() > item.getCalories()) 
-				minMenu.setDessert(item);		
+		for (Dessert dessert: desserts){
+			if (minMenu.getDessert().getCalories() > dessert.getCalories()) 
+				minMenu.setDessert(dessert);		
 		}
 		
 		return minMenu;
 		
 	}
 	
+	/**
+	 * compares each dish type element with each other, if the calorie value is higher that dish is kept
+	 */
+	
 	public Menu maxCaloriesMenu(String name) {
 		Menu maxMenu = new Menu(name);
 		
 		maxMenu.setEntree(entrees.get(entrees.size()-1));
-		for (Entree item: entrees){
-			if (maxMenu.getEntree().getCalories() < item.getCalories()) 
-				maxMenu.setEntree(item);		
+		for (Entree entree: entrees){
+			if (maxMenu.getEntree().getCalories() < entree.getCalories()) 
+				maxMenu.setEntree(entree);		
 		}
 
-		maxMenu.setSalad(salads.get(salads.size()-1));
-		for (Salad item: salads){
-			if (maxMenu.getSalad().getCalories() < item.getCalories()) 
-				maxMenu.setSalad(item);		
+		maxMenu.setSide(sides.get(sides.size()-1));
+		for (Side side: sides){
+			if (maxMenu.getSide().getCalories() < side.getCalories()) 
+				maxMenu.setSide(side);		
 		}
 		
-		maxMenu.setSide(sides.get(sides.size()-1));
-		for (Side item: sides){
-			if (maxMenu.getSide().getCalories() < item.getCalories()) 
-				maxMenu.setSide(item);		
+		maxMenu.setSalad(salads.get(salads.size()-1));
+		for (Salad salad: salads){
+			if (maxMenu.getSalad().getCalories() < salad.getCalories()) 
+				maxMenu.setSalad(salad);		
 		}
 		
 		maxMenu.setDessert(desserts.get(desserts.size()-1));
-		for (Dessert item: desserts){
-			if (maxMenu.getDessert().getCalories() < item.getCalories()) 
-				maxMenu.setDessert(item);		
+		for (Dessert dessert: desserts){
+			if (maxMenu.getDessert().getCalories() < dessert.getCalories()) 
+				maxMenu.setDessert(dessert);		
 		}
 				
 		return maxMenu;

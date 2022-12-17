@@ -45,6 +45,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		main.setAlwaysOnTop(true);
 
+		
 		createMenuLabel = new JLabel("Create your own menu:");
 		createMenuLabel.setBounds(10, 5, 135, 25);
 
@@ -55,7 +56,6 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		genMenuLabel.setBounds(10, 250, 120, 25);
 
 		
-		
 		entreesLabel = new JLabel("Entrees:");
 		entreesLabel.setBounds(15, 30, 70, 25);
 
@@ -65,10 +65,10 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		saladsLabel = new JLabel("Salads:");
 		saladsLabel.setBounds(15, 100, 70, 25);
 
-
 		dessertsLabel = new JLabel("Desserts:");
 		dessertsLabel.setBounds(15, 135, 70, 25);
 
+		
 		main.add(entreesLabel);
 		main.add(sidesLabel);
 		main.add(saladsLabel);
@@ -166,7 +166,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 			}
 		});
 
-		//random button, creates a random menu and adds it to box and array
+		//random button function, creates a random menu and adds it to box and array
 		
 		randomMenuButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -177,7 +177,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 			}
 		});
 
-		//minimum calorie menu button, calls method and adds new menu to list and array
+		//minimum calorie menu button function, calls method and adds new menu to list and array
 		
 		minMenuButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -197,7 +197,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 			}
 		});
 
-		//details button, reads selected menu from list and calls the details pane method
+		//details button function, reads menu that user selected from above list and calls the details pane method
 		
 		detailsButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -214,7 +214,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 	}
 
 	/**
-	 * Method that reads each array list of item types and fills in the comboboxes
+	 * Method that reads each arraylist of each dish and fills in the comboboxes
 	 */
 	
 	public void fillComboBoxes(){
@@ -235,7 +235,6 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		frameDetails.setBounds(250,250,520,500);
 		frameDetails.setResizable(false);
 		frameDetails.setAlwaysOnTop(true);
-		//Insets margins = new Insets(1,3,1,1);
 
 		JLabel entreesLabel = new JLabel("Entree:");
 		entreesLabel.setBounds(15, 30, 70, 25);
@@ -249,7 +248,7 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		JLabel dessertsLabel = new JLabel("Dessert:");
 		dessertsLabel.setBounds(15, 240, 70, 25);
 
-		JLabel caloriesLabel = new JLabel("Total Calories (Kc):");
+		JLabel caloriesLabel = new JLabel("Total Calories:");
 		caloriesLabel.setBounds(15, 320, 90, 35);
 
 		JLabel priceLabel = new JLabel("Total Price:");
@@ -292,13 +291,19 @@ public class MenuManagerGUI implements ActionListener, ListSelectionListener {
 		frameDetails.add(textArea5);
 		frameDetails.add(textArea6);
 
-		textArea1.setText(menu.getEntree() + "\n" + menu.getEntree().getDescription() + "\nCalories: " + menu.getEntree().getCalories() + "   Price: $" + menu.getEntree().getPrice());
-		textArea2.setText(menu.getSalad() + "\n" + menu.getSalad().getDescription() + "\nCalories: " + menu.getSalad().getCalories() + "   Price: $" + menu.getSalad().getPrice());
-		textArea3.setText(menu.getSide() + "\n" + menu.getSide().getDescription() + "\nCalories: " + menu.getSide().getCalories() + "   Price: $" + menu.getSide().getPrice());
-		textArea4.setText(menu.getDessert() + "\n" + menu.getDessert().getDescription() + "\nCalories: " + menu.getDessert().getCalories() + "   Price: $" + menu.getDessert().getPrice());
+		textArea1.setText(menu.getEntree() + "\n" + menu.getEntree().getDescription()
+				+ "\nCalories: " + menu.getEntree().getCalories() + "   Price: $" + menu.getEntree().getPrice());
+		textArea2.setText(menu.getSalad() + "\n" + menu.getSalad().getDescription() 
+				+ "\nCalories: " + menu.getSalad().getCalories() + "   Price: $" + menu.getSalad().getPrice());
+		textArea3.setText(menu.getSide() + "\n" + menu.getSide().getDescription() 
+				+ "\nCalories: " + menu.getSide().getCalories() + "   Price: $" + menu.getSide().getPrice());
+		textArea4.setText(menu.getDessert() + "\n" + menu.getDessert().getDescription() 
+				+ "\nCalories: " + menu.getDessert().getCalories() + "   Price: $" + menu.getDessert().getPrice());
+		
 		textArea5.setText("" + menu.totalCalories());
 		textArea6.setText("$  " + menu.totalPrice());
 
+		//allows us to see details		
 		frameDetails.setVisible(true);
 	}
 

@@ -144,6 +144,15 @@ public class FileManager {
 		return dessertArrayList;
 	}
 	*/
+	
+	/**
+	 * Splits input from text document, dishes.txt in this case, into a string array, then assigns parts of each line to different attributes
+	 * ie, name, descripton, dishType, etc.
+	 * dishType is then used to assign what kind of object should be added.
+	 * ie, entree is read in the line, so an entree item is added.
+	 * loops through whole document.
+	 */
+	
 	public static ArrayList<MenuItem> readItems(String fileName){
 		ArrayList<MenuItem> MenuItemArrayList = new ArrayList<>();
 		try {
@@ -189,6 +198,10 @@ public class FileManager {
 		}
 		return MenuItemArrayList;
 	}
+	
+	/**
+	 * takes input from the file, which is dishes.txt in this case, and then writes it.
+	 */
 	
 	public static void writeMenu(String fileName, ArrayList<Menu> menus){
 		try{
